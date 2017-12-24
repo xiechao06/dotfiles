@@ -1,0 +1,9 @@
+[user]
+	email = xiechao06@gmail.com
+[credential]
+	helper = cache
+[core]
+	editor = gedit
+	quotepath = off
+[push]
+	default = matching
