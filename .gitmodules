@@ -1,3 +1,6 @@
 [submodule ".cache/fzf"]
 	path = .cache/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule ".cache/vim"]
+	path = .cache/vim
+	url = git@github.com:xiechao06/vim.git
