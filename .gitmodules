@@ -3,4 +3,4 @@
 	url = https://github.com/junegunn/fzf.git
 [submodule ".cache/vim"]
 	path = .cache/vim
-	url = git@github.com:xiechao06/vim.git
+	url = https://github.com/xiechao06/vim.git
