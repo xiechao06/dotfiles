@@ -1,0 +1,3 @@
+[submodule ".cache/fzf"]
+	path = .cache/fzf
+	url = https://github.com/junegunn/fzf.git
