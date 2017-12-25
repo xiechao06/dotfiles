@@ -1,9 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 trap 'exit' ERR
 
 # Let me run anywhere!
 DOTFILES_DIR="$(cd $( dirname "$0" ) && pwd )"
+echo $DOTFILES_DIR
 
 ln -sfv "$DOTFILES_DIR/i3" ~/.i3
 ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
@@ -18,7 +19,7 @@ if [ -n "$(getent group sudo | grep $(whoami))" ]; then
     sudo apt update
     sudo apt install -y \
         vim inkscape zathura spacefm silversearcher-ag tmuxinator i3 \
-        git postgresql \
+        git postgresql
 fi
 
 . "$DOTFILES_DIR/install/fzf"
