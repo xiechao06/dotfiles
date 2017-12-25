@@ -6,12 +6,12 @@ trap 'exit' ERR
 DOTFILES_DIR="$(cd $( dirname "$0" ) && pwd )"
 echo $DOTFILES_DIR
 
-ln -sfv "$DOTFILES_DIR/i3" ~/.i3
+[ ! -d ~/.vim ] && ln -sfv "$DOTFILES_DIR/i3" ~/.i3
 ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/i3status.conf" ~/.i3status.conf
-ln -sfv "$DOTFILES_DIR/vim" ~/.vim
 
 git submodule update --init --recursive --remote
+[ ! -d ~/.vim ] && ln -sfv "$DOTFILES_DIR/.cache/vim" ~/.vim
 $DOTFILES_DIR/.cache/vim/install.sh
 
 if [ -n "$(getent group sudo | grep $(whoami))" ]; then
