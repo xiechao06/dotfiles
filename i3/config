@@ -175,7 +175,8 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+p mode "$mode_system"
 
 exec gnome-terminal
-exec ss-qt5
+exec --no-startup-id ss-qt5
+exec --no-startup-id nm-applet
 exec feh --recursive --randomize --bg-fill ~/.config/variety/Downloaded/**/*.jpg
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
