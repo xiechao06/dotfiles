@@ -2,7 +2,6 @@
 
 # Let me run anywhere!
 DOTFILES_DIR="$(cd $( dirname "$0" ) && pwd )"
-echo $DOTFILES_DIR
 
 ln -sfv "$DOTFILES_DIR/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/tmux.conf" ~/.tmux.conf
@@ -15,6 +14,9 @@ git submodule update --init --recursive
 
 source "$DOTFILES_DIR/install/apt-use-mirror.sh"
 sudo apt update
-sudo apt install -y vim inkscape zathura spacefm silversearcher-ag tmuxinator i3 git
+sudo apt install -y \
+    vim inkscape zathura spacefm silversearcher-ag tmuxinator i3 \
+    git postgresql \
+    /
 
 source "$DOTFILES_DIR/install/fzf"
