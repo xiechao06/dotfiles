@@ -160,10 +160,10 @@ bar {
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock, mode "default"
+    bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id lock && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id lock && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id i3lock -c 000000 && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id i3lock -c 000000 && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
 
@@ -172,7 +172,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
-bindsym $mod+p mode "$mode_system"
+bindsym Ctrl+Mod1+Delete mode "$mode_system"
 
 exec gnome-terminal
 exec --no-startup-id ss-qt5
@@ -185,3 +185,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+exec --no-startup-id xautolock -detectsleep \
+  -time 5 -locker "i3lock -c 000000" \
+  -notify 30 \
+  -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" \
+  -killtime 10 \
+  -killer "systemctl suspend"
