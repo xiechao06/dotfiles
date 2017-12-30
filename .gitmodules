@@ -4,3 +4,6 @@
 [submodule ".cache/vim"]
 	path = .cache/vim
 	url = https://github.com/xiechao06/vim.git
+[submodule ".cache/i3-battery-popup"]
+	path = .cache/i3-battery-popup
+	url = https://github.com/rjekker/i3-battery-popup.git

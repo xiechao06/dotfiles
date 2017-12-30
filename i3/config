@@ -192,3 +192,5 @@ exec --no-startup-id xautolock -detectsleep \
   -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'" \
   -killtime 10 \
   -killer "systemctl suspend"
+
+exec --no-startup-id ~/.local/dotfiles/.cache/i3-battery-popup/i3-battery-popup -n
