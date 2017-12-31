@@ -6,11 +6,16 @@ trap 'exit' ERR
 DOTFILES_DIR="$(cd $( dirname "$0" ) && pwd )"
 echo $DOTFILES_DIR
 
-[ ! -d ~/.i3 ] && ln -sfv "$DOTFILES_DIR/i3" ~/.i3
+TS="$(date +%Y%m%d%H%M%S)"
+
+[ -d ~/.i3 ] && mv ~/.i3 ~/.i3."$TS".backup
+ln -sfv "$DOTFILES_DIR/i3" ~/.i3
+[ -f ~/.gitconfig ] && mv ~/.gitconfig ~/.gitconfig."$TS".backup
 ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
+[ -f ~/.i3status.conf ] && mv ~/.i3status.conf ~/.i3status.conf."$TS".backup
 ln -sfv "$DOTFILES_DIR/i3status.conf" ~/.i3status.conf
+[ -f ~/.tmux.conf ] && mv ~/.tmux.conf ~/.tmux.conf."$TS".backup
 ln -sfv "$DOTFILES_DIR/tmux.conf" ~/.tmux.conf
-ln -sfv "$DOTFILES_DIR/xinitrc" ~/.xinitrc
 
 git submodule update --init --recursive --remote
 [ ! -d ~/.vim ] && ln -sfv "$DOTFILES_DIR/.cache/vim" ~/.vim
