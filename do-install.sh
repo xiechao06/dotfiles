@@ -26,7 +26,7 @@ if [ -n "$(getent group sudo | grep $(whoami))" ]; then
     sudo apt update
     sudo apt install -y \
         vim inkscape zathura spacefm silversearcher-ag tmuxinator i3 \
-        git postgresql feh xautolock xbacklight
+        git postgresql feh xautolock xbacklight gimp scrot
 fi
 
 . "$DOTFILES_DIR/install/fzf"
