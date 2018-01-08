@@ -174,6 +174,18 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+p mode "$mode_system"
 
+set $adjust_volume (Up) raise volumn, (Down) lower volume, (t) toggle
+mode "$adjust_volume" {
+    bindsym Up exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+    bindsym Down exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+    bindsym t exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym Shift+$mod+v mode "$adjust_volume"
+
 
 exec gnome-terminal
 exec --no-startup-id ss-qt5
