@@ -187,7 +187,7 @@ mode "$adjust_volume" {
 bindsym Shift+$mod+v mode "$adjust_volume"
 
 
-exec gnome-terminal
+exec guake
 exec --no-startup-id ss-qt5
 exec --no-startup-id nm-applet
 exec feh --recursive --randomize --bg-fill ~/.config/variety/Downloaded/**/*.jpg
