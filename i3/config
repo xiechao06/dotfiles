@@ -204,6 +204,9 @@ bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 # scrot & gimp - select window or rectangle
 bindsym Mod1+Print exec scrot -s -e 'mv $f /tmp/ && gimp /tmp/$f'
 
+bindsym $mod+Mod1+Left move workspace to output LEFT
+bindsym $mod+Mod1+Right move workspace to output RIGHT
+
 exec --no-startup-id xautolock -detectsleep \
   -time 5 -locker "i3lock -c 000000" \
   -notify 30 \
