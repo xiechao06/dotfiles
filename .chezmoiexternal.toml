@@ -1,0 +1,12 @@
+[".bash-it"]
+    type = "archive"
+    url = "https://github.com/Bash-it/bash-it/archive/refs/heads/master.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+[".tmux"]
+    type = "archive"
+    url = "https://github.com/gpakosz/.tmux/archive/refs/heads/master.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
