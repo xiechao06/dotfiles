@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "solarized8"
+lvim.colorscheme = "onedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -159,6 +159,9 @@ lvim.plugins = {
       vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
       vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
     end,
+  },
+  {
+    "JuliaEditorSupport/julia-vim"
   },
   {
     "andymass/vim-matchup",
