@@ -1,2 +1,4 @@
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
+#!/bin/bash
+
+ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
+cp ~/.tmux/.tmux.conf.local ~/.
