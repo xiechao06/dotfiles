@@ -1,0 +1,11 @@
+alias vim=lvim
+alias vi=lvim
+
+alias ls="exa" # just replace ls by exa and allow all other exa arguments
+alias l="exa -lbF" #   list, size, type
+alias ll="exa -la" # long, all
+alias llm="exa -la --sort=modified" # list, long, sort by modification date
+alias la="exa -lbhHigUmuSa" # all list
+alias lx="exa -lbhHigUmuSa@" # all list and extended
+alias tree="exa --tree" # tree view
+alias lS="exa -1" # one column by just names
