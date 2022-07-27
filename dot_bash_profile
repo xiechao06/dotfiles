@@ -1,7 +1,4 @@
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+#curl -fsSL https://get.pnpm.io/install.sh | sh -!/usr/bin/env bash
 
 # If not running interactively, don't do anything
 case $- in
@@ -10,7 +7,7 @@ case $- in
 esac
 
 # Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
+export BASH_IT="/Users/xiechao/.bash_it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -86,7 +83,12 @@ export SCM_CHECK=true
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH=$PATH:$HOME/.local/bin:$HOME/bin/
 
-alias vim=lvim
-alias vi=lvim
+if [[ -f $HOME/.bashrc ]]; then
+  source $HOME/.bashrc
+fi
+
+if [[ -f $HOME/.bash_aliases ]]; then
+  source $HOME/.bash_aliases
+fi
