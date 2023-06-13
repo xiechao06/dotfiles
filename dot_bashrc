@@ -1,0 +1,30 @@
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/bash/__tabtab.bash ] && . ~/.config/tabtab/bash/__tabtab.bash || true
+eval "$(pyenv init -)"
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[ -f /Users/xiechao/workspace/temp/my-new-app/node_modules/tabtab/.completions/electron-forge.bash ] && . /Users/xiechao/workspace/temp/my-new-app/node_modules/tabtab/.completions/electron-forge.bash
+# pnpm
+export PNPM_HOME="/Users/xiechao/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# Path to the bash it configuration
+export BASH_IT="$HOME/.bash_it"
+
+# Lock and Load a custom theme file.
+# Leave empty to disable theming.
+# location /.bash_it/themes/
+export BASH_IT_THEME='bobby'
+
+# Load Bash It
+source "$BASH_IT"/bash_it.sh
+
+eval "$(zoxide init bash)"

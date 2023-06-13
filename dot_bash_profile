@@ -2,29 +2,9 @@
 
 # If not running interactively, don't do anything
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
-
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
-
-# Lock and Load a custom theme file.
-# Leave empty to disable theming.
-# location /.bash_it/themes/
-export BASH_IT_THEME='bobby'
-
-# Some themes can show whether `sudo` has a current token or not.
-# Set `$THEME_CHECK_SUDO` to `true` to check every prompt:
-#THEME_CHECK_SUDO='true'
-
-# (Advanced): Change this to the name of your remote repo if you
-# cloned bash-it with a remote other than origin such as `bash-it`.
-# export BASH_IT_REMOTE='bash-it'
-
-# (Advanced): Change this to the name of the main development branch if
-# you renamed it or if it was changed for some reason
-# export BASH_IT_DEVELOPMENT_BRANCH='master'
 
 # Your place for hosting Git repos. I use this for private repos.
 export GIT_HOSTING='git@git.domain.com'
@@ -80,17 +60,27 @@ export SCM_CHECK=true
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
-# Load Bash It
-source "$BASH_IT"/bash_it.sh
-
 export PATH=$PATH:$HOME/.local/bin:$HOME/bin/
 
-export EDITOR=lvim
+export EDITOR=nvim
 
 if [[ -f $HOME/.bashrc ]]; then
-  source $HOME/.bashrc
+	source $HOME/.bashrc
 fi
 
 if [[ -f $HOME/.bash_aliases ]]; then
-  source $HOME/.bash_aliases
+	source $HOME/.bash_aliases
 fi
+
+# Added by Toolbox App
+export PATH="$PATH:/usr/local/bin"
+
+function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@; }
+
+export VCPKG_ROOT="$HOME/vcpkg"
+export PATH="$PATH:$VCPKG_ROOT"
+export CMAKE_TOOLCHAIN_FILE="$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+
+source /Users/xiechao/vcpkg/scripts/vcpkg_completion.bash
+
+export GITHUB_AUTHORIZATION="Token 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"
